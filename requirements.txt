@@ -1,0 +1,2 @@
+# Vercel Serverless Python Runtime
+# Core AutoPilot AI engine utilizes standard Python library for ultra-fast serverless boots
