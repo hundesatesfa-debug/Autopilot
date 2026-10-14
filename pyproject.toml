@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "autopilot-ai"
+version = "1.0.0"
+description = "AutoPilot AI: Universal Coding Agent Automation"
+readme = "AutoPilot-AI/README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.vercel]
+entrypoint = "index.py"
