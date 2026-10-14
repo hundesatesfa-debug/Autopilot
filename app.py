@@ -1,5 +1,7 @@
 # AutoPilot AI Vercel Entrypoint
-from index import app, handler
+from index import app, application, handler
+
+__all__ = ["app", "application", "handler"]
 
 if __name__ == "__main__":
     from http.server import HTTPServer

@@ -479,6 +479,10 @@ def app(environ, start_response):
     return [body]
 
 
+application = app
+
+
+
 # --- Standard BaseHTTPRequestHandler (Vercel Serverless Function Handler) ---
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
