@@ -1,0 +1,92 @@
+{
+  "manual": {
+    "name": "Manual",
+    "description": "All approval decisions remain strictly with the user. Zero automatic approvals.",
+    "auto_approve_categories": [],
+    "allowed_commands": [],
+    "blocked_commands": [".*"],
+    "allowed_path_patterns": [],
+    "blocked_path_patterns": [".*"],
+    "require_workspace_containment": true,
+    "allow_network": false,
+    "allow_package_install": false
+  },
+  "balanced": {
+    "name": "Balanced",
+    "description": "Automate routine, low-risk operations (workspace file creation/editing, tests, builds, linting) while requiring explicit confirmation for sensitive commands, deletions, and external paths.",
+    "auto_approve_categories": [
+      "file_create",
+      "file_edit",
+      "test_run",
+      "build_run"
+    ],
+    "allowed_commands": [
+      "^npm (test|run lint|run build|run format|run typecheck).*$",
+      "^pytest( .*)?$",
+      "^python -m unittest( .*)?$",
+      "^cargo (test|check|build|clippy).*$",
+      "^go (test|build|vet).*$",
+      "^git (status|diff|log|branch).*$",
+      "^ruff (check|format).*$",
+      "^black( .*)?$",
+      "^prettier( .*)?$"
+    ],
+    "blocked_commands": [
+      ".*(rm|del|erase)\\s+(-r|-rf|-f|/s|/q).*",
+      ".*(sudo|su|runas|chmod|chown).*",
+      ".*(curl|wget|Invoke-WebRequest|iwr).*\\|.*(sh|bash|powershell|cmd).*",
+      ".*(\\bformat\\b|\\bmkfs\\b|\\bdd\\b).*",
+      ".*(\\.ssh|id_rsa|\\.env|id_ed25519|credentials).*",
+      ".*(net user|net localgroup|reg add|reg delete).*"
+    ],
+    "allowed_path_patterns": [
+      "^src/.*$",
+      "^app/.*$",
+      "^lib/.*$",
+      "^tests?/.*$",
+      "^docs/.*$",
+      "^[a-zA-Z0-9_\\-\\.]+\\.(ts|tsx|js|jsx|py|rs|go|kt|java|cpp|c|h|json|md|yaml|yml|css|html|xml|toml)$"
+    ],
+    "blocked_path_patterns": [
+      ".*\\.env.*",
+      ".*\\.git/.*",
+      ".*id_rsa.*",
+      ".*id_ed25519.*",
+      ".*credentials.*",
+      ".*passwd.*",
+      ".*shadow.*",
+      "^[A-Za-z]:[\\\\/](Windows|Program Files).*",
+      "^/(etc|root|var|bin|sbin|usr).*"
+    ],
+    "require_workspace_containment": true,
+    "allow_network": false,
+    "allow_package_install": false
+  },
+  "custom": {
+    "name": "Custom",
+    "description": "User-configured policy tailored for specific projects and workflows.",
+    "auto_approve_categories": [
+      "file_create",
+      "file_edit",
+      "test_run"
+    ],
+    "allowed_commands": [
+      "^pytest.*$",
+      "^npm test.*$"
+    ],
+    "blocked_commands": [
+      ".*(rm|del)\\s+(-rf|/s).*",
+      ".*(sudo|runas).*"
+    ],
+    "allowed_path_patterns": [
+      "^src/.*$",
+      "^tests/.*$"
+    ],
+    "blocked_path_patterns": [
+      ".*\\.env.*"
+    ],
+    "require_workspace_containment": true,
+    "allow_network": false,
+    "allow_package_install": false
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "AutoPilot AI",
+  "description": "Universal Coding Agent Automation assistant to streamline permissions and approvals for Cursor, Claude Code, Antigravity, and Copilot.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

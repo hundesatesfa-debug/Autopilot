@@ -1,0 +1,37 @@
+{
+  "version": "1.0.0",
+  "global_automation_enabled": true,
+  "dry_run_mode": false,
+  "active_profile": "balanced",
+  "workspaces": [
+    "."
+  ],
+  "rate_limit_per_minute": 30,
+  "notification_sound": true,
+  "notification_desktop": true,
+  "auto_pause_on_unknown": true,
+  "adapters": {
+    "cursor": {
+      "enabled": true,
+      "mode": "auto"
+    },
+    "claude_code": {
+      "enabled": true,
+      "mode": "auto"
+    },
+    "google_antigravity": {
+      "enabled": true,
+      "mode": "auto"
+    },
+    "vscode_copilot": {
+      "enabled": true,
+      "mode": "auto"
+    }
+  },
+  "logging": {
+    "level": "INFO",
+    "log_to_file": true,
+    "audit_trail": true,
+    "redact_secrets": true
+  }
+}
